@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Church Contact Information Form</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdn.rawgit.com/davidshimjs/qrcodejs/gh-pages/qrcode.min.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+            background-color: #f4f4f4;
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+        .container {
+            text-align: center;
+            margin-top: 50px;
+        }
+        button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Church Contact Information</h1>
+    <p style="text-align: center;">Scan the QR code to fill out the contact form.</p>
+
+    <!-- Container for the QR Code -->
+    <div class="container">
+        <!-- Display the QR code here -->
+        <div id="qrcode"></div>
+        <p>Or click the button below to open the form:</p>
+        <button onclick="window.location.href='church-contact-form.html'">Open Contact Form</button>
+    </div>
+
+    <script>
+        // URL of the form that people will be directed to
+        const formURL = "church-contact-form.html"; // Update this to the actual form URL if hosted
+
+        // Generate QR code that links to the form
+        new QRCode(document.getElementById("qrcode"), formURL);
+    </script>
+
+</body>
+</html>
